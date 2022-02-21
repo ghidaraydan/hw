@@ -27,7 +27,7 @@ st.markdown(Life_Expectancy,unsafe_allow_html=True)
 
 st.title("Graduate Admission Prediction")
 
-df = pd.read_csv(r"C:\Users\BC\Downloads\Admission_Predict.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/ghidaraydan/hw/main/Admission_Predict.csv")
 
 if st.checkbox('Show graduate admission data'):
       st.subheader('Graduate Admission Data')
