@@ -74,7 +74,7 @@ st.plotly_chart(ax4)
 
 st.title("Life Expectancy")
 
-df1=pd.read_csv(https://raw.githubusercontent.com/ghidaraydan/hw/main/Life_expectancy_dataset.csv')
+df1=pd.read_csv("https://raw.githubusercontent.com/ghidaraydan/hw/main/Life_expectancy_dataset.csv")
 
 if st.checkbox('Show Life Expectancy Data'):
     st.subheader('Life Expectancy Data')
