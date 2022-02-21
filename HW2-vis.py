@@ -28,8 +28,7 @@ st.markdown(Life_Expectancy,unsafe_allow_html=True)
 st.title("Graduate Admission Prediction")
 
 df = pd.read_csv("https://raw.githubusercontent.com/ghidaraydan/hw/main/Admission_Predict.csv")
-image = Image.open("https://www.linkpicture.com/q/photo1.jpg")
-st.image(image)
+st.image("https://866821.smushcdn.com/1939086/wp-content/uploads/graduate-masters-admission.jpg?lossy=1&strip=1&webp=1")
 
 if st.checkbox('Show graduate admission data'):
       st.subheader('Graduate Admission Data')
@@ -75,9 +74,6 @@ ax4=px.box(df,x="Research",y="Chance of Admit ",color="Research")
 st.plotly_chart(ax4)
 
 st.title("Life Expectancy")
-image = Image.open("https://www.linkpicture.com/q/photo2.jpg")
-st.image(image)
-
 df1=pd.read_csv("https://raw.githubusercontent.com/ghidaraydan/hw/main/Life_expectancy_dataset.csv",encoding='latin-1')
 
 if st.checkbox('Show Life Expectancy Data'):
