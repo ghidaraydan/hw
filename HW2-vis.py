@@ -105,9 +105,6 @@ select = st.sidebar.selectbox('Select a Continent',df2['Continent'])
 
 #get the state selected in the selectbox
 state_data = df2[df2['Continent'] == select]
-select_status = st.sidebar.radio("Life Expectancty by Continent", ('Overall Life',
-'Male Life', 'Female Life',))
-
 def get_total_dataframe(dataset):
     total_dataframe = pd.DataFrame({
     'Status':['Overall Life', 'Male Life', 'Female Life'],
@@ -115,22 +112,20 @@ def get_total_dataframe(dataset):
     dataset.iloc[0]['Male Life'], 
     dataset.iloc[0]['Female Life'])})
     return total_dataframe
-state_total = get_total_dataframe(df2)
+state_total = get_total_dataframe(state_data)
 
-if st.sidebar.checkbox("Show Analysis by Continent", True, key=2):
-    st.markdown("## **Continent level analysis**")
-    st.markdown("### Overall Life, Male Life and, Female Life " +
-    " in %s " % (select))
-    if not st.checkbox('Hide Graph', False, key=1):
-        state_total_graph = px.bar(
+#if st.checkbox("Show Analysis by Continent", True, key=2):
+st.markdown("## **Level analysis**" + " in %s " % (select))
+#st.markdown("### Overall Life, Male Life ,and Female Life " +
+   # " in %s " % (select))
+   # if not st.checkbox('Hide Graph', False, key=1):
+state_total_graph = px.bar(
         state_total, 
         x='Status',
         y='Number of cases',
         labels={'Number of cases':'Number of cases in %s' % (select)},
         color='Status')
-        st.plotly_chart(state_total_graph)
-
-
+st.plotly_chart(state_total_graph, use_container_width=True)
 
 st.sidebar.write("**Contact** **Details:**")
 st.sidebar.write("Done by: **Ghida** **Raydan**")
